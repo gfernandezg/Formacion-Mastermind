@@ -16,6 +16,7 @@
 
 - (void)setNextColor:(UIColor *)newColor;
 - (void)resetColors;
+- (void)colorTaped:(id)sender;
 
 @end
 
@@ -28,6 +29,14 @@
     
     // Initialize empty colors
     [self resetColors];
+    
+    // Initialize gestures to remove colors
+    for (int n=0; n<4; n++)
+    {
+        [[_testColors objectAtIndex:n] setUserInteractionEnabled:YES];
+        [[_testColors objectAtIndex:n] addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(colorTaped:)]];
+    }
+    
 }
 
 - (NSInteger)firstEmptyColor
@@ -73,6 +82,13 @@
     
     // Set next emplty color to current color
     [self setNextColor:currentColor];
+}
+
+- (void)colorTaped:(UITapGestureRecognizer *)tapGesture
+{
+    UILabel *tapedLabel = (UILabel *)tapGesture.view;
+
+    [tapedLabel setBackgroundColor:unknownColor];
 }
 
 @end
