@@ -11,8 +11,12 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+{
+    NSArray *_currentCombination;
+}
 
 @property (readonly, nonatomic) NSInteger firstEmptyColor;
+@property (readonly, nonatomic) NSNumber *randomColor;
 
 - (void)setNextColor:(UIColor *)newColor;
 - (void)resetColors;
@@ -40,6 +44,9 @@
         [[_testColors objectAtIndex:n] addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(colorTaped:)]];
     }
     
+    _currentCombination = [NSArray arrayWithObjects:self.randomColor, self.randomColor, self.randomColor, self.randomColor, nil];
+    
+    NSLog(@"Current Combination %@", _currentCombination);
 }
 
 - (NSInteger)firstEmptyColor
@@ -54,6 +61,11 @@
         return 3;
     
     return -1;
+}
+
+- (NSNumber *)randomColor
+{
+    return [NSNumber numberWithInt:(arc4random() % 4)+1];
 }
 
 - (void)didReceiveMemoryWarning
@@ -119,6 +131,15 @@
     [currentGridArray addObject:newCombination];
     _results.values = [NSArray arrayWithArray:currentGridArray];
     
+    // Check results
+    NSArray *combinationResults = [self checkResults:newCombination];
+    
+    for (int n=0; n<4; n++) {
+        if (n<[combinationResults count])
+            [[_testColors objectAtIndex:n] setText:[combinationResults objectAtIndex:n]];
+        else
+            [[_testColors objectAtIndex:n] setText:@""];
+    }
 }
 
 - (NSArray *)getCombination
@@ -141,6 +162,36 @@
     }
     
     return [NSArray arrayWithArray:combination];
+}
+
+- (NSArray *)checkResults:(NSArray *)combination
+{
+    NSMutableArray *results = [NSMutableArray arrayWithCapacity:4];
+    NSMutableArray *checkCombination = [combination mutableCopy];
+    NSMutableArray *currentCombination = [_currentCombination mutableCopy];
+    
+    // Check placed
+    for (int n=0; n<4; n++) {
+        if ([[checkCombination objectAtIndex:n] isEqual:[currentCombination objectAtIndex:n]]) {
+            [results addObject:@"X"];
+            [checkCombination replaceObjectAtIndex:n withObject:[NSNumber numberWithInt:-1]];
+            [currentCombination replaceObjectAtIndex:n withObject:[NSNumber numberWithInt:-1]];
+        }
+    }
+    
+    // Check existing
+    for (int n=0; n<4; n++) {
+        for (int m=0; m<4; m++) {
+            if (([[checkCombination objectAtIndex:n] isEqual:[currentCombination objectAtIndex:m]])&&
+                (![[currentCombination objectAtIndex:m] isEqual:[NSNumber numberWithInt:-1]])){
+                [results addObject:@"Y"];
+                [currentCombination replaceObjectAtIndex:m withObject:[NSNumber numberWithInt:-1]];
+                break;
+            }
+        }
+    }
+    
+    return [NSArray arrayWithArray:results];
 }
 
 @end
