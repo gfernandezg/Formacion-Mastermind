@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A1F734B1723235C002B5EB7 /* GridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F734A1723235C002B5EB7 /* GridView.m */; };
 		8A5AE74017231C9B00EFB337 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5AE73F17231C9B00EFB337 /* UIKit.framework */; };
 		8A5AE74217231C9B00EFB337 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5AE74117231C9B00EFB337 /* Foundation.framework */; };
 		8A5AE74417231C9B00EFB337 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5AE74317231C9B00EFB337 /* CoreGraphics.framework */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A1F73491723235C002B5EB7 /* GridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
+		8A1F734A1723235C002B5EB7 /* GridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridView.m; sourceTree = "<group>"; };
 		8A5AE73C17231C9B00EFB337 /* MasterMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A5AE73F17231C9B00EFB337 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8A5AE74117231C9B00EFB337 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,6 +92,8 @@
 				8A5AE75817231C9B00EFB337 /* ViewController.m */,
 				8A5AE75A17231C9B00EFB337 /* ViewController.xib */,
 				8A5AE74617231C9B00EFB337 /* Supporting Files */,
+				8A1F73491723235C002B5EB7 /* GridView.h */,
+				8A1F734A1723235C002B5EB7 /* GridView.m */,
 			);
 			path = MasterMind;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 				8A5AE74C17231C9B00EFB337 /* main.m in Sources */,
 				8A5AE75017231C9B00EFB337 /* AppDelegate.m in Sources */,
 				8A5AE75917231C9B00EFB337 /* ViewController.m in Sources */,
+				8A1F734B1723235C002B5EB7 /* GridView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +304,7 @@
 				8A5AE76117231C9B00EFB337 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

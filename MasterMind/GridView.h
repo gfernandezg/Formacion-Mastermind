@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  GridView.h
 //  MasterMind
 //
 //  Created by Guillem Fernández González on 20/04/13.
@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GridView.h"
 
-@interface ViewController : UIViewController
+@interface GridView : UIView
 
-@property (weak, nonatomic) IBOutlet GridView *results;
+@property (strong, nonatomic) NSArray *values;
 
 @end

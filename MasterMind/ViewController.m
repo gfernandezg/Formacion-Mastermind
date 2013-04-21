@@ -18,6 +18,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    NSArray *testValues = [NSArray arrayWithObjects:[NSArray arrayWithObjects:[NSNumber numberWithInt:1],
+                                                     [NSNumber numberWithInt:2],
+                                                     [NSNumber numberWithInt:3],
+                                                     [NSNumber numberWithInt:4],nil],
+                           [NSArray arrayWithObjects:[NSNumber numberWithInt:1],
+                            [NSNumber numberWithInt:1],
+                            [NSNumber numberWithInt:1],
+                            [NSNumber numberWithInt:1],nil], nil];
+    
+    _results.values = testValues;
 }
 
 - (void)didReceiveMemoryWarning
