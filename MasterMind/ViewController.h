@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet GridView *results;
 
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *testColors;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttonColors;
 
 - (IBAction)setColor:(id)sender;
 @end

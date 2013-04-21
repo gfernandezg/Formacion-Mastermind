@@ -46,6 +46,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{20, 20}, {64, 35}}</string>
 								<reference key="NSSuperview" ref="119656437"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="34864977"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor" id="394081025">
@@ -82,6 +83,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{92, 20}, {64, 35}}</string>
 								<reference key="NSSuperview" ref="119656437"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="629567377"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="394081025"/>
@@ -104,6 +106,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{164, 20}, {64, 35}}</string>
 								<reference key="NSSuperview" ref="119656437"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="835305820"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="394081025"/>
@@ -126,6 +129,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{236, 20}, {64, 35}}</string>
 								<reference key="NSSuperview" ref="119656437"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="289677343"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="394081025"/>
@@ -146,6 +150,7 @@
 						</array>
 						<string key="NSFrameSize">{324, 75}</string>
 						<reference key="NSSuperview" ref="774585933"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="965495109"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -166,6 +171,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{20, 19}, {64, 36}}</string>
 								<reference key="NSSuperview" ref="926772867"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="435867618"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
@@ -203,6 +209,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{92, 19}, {64, 36}}</string>
 								<reference key="NSSuperview" ref="926772867"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1050875032"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
@@ -227,6 +234,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{164, 19}, {64, 36}}</string>
 								<reference key="NSSuperview" ref="926772867"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="475828652"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
@@ -251,6 +259,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{236, 19}, {64, 36}}</string>
 								<reference key="NSSuperview" ref="926772867"/>
+								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">1</int>
@@ -272,6 +281,7 @@
 						</array>
 						<string key="NSFrame">{{0, 473}, {324, 75}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="543749993"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -286,6 +296,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{0, 83}, {324, 382}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="926772867"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -298,6 +309,7 @@
 				</array>
 				<string key="NSFrame">{{0, 20}, {320, 548}}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="119656437"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -385,6 +397,46 @@
 					<int key="connectionID">308</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletCollectionConnection" key="connection">
+						<string key="label">buttonColors</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="543749993"/>
+						<string key="cachedDesigntimeCollectionClassName">NSArray</string>
+						<bool key="addsContentToExistingCollection">NO</bool>
+					</object>
+					<int key="connectionID">309</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletCollectionConnection" key="connection">
+						<string key="label">buttonColors</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="435867618"/>
+						<string key="cachedDesigntimeCollectionClassName">NSArray</string>
+						<bool key="addsContentToExistingCollection">NO</bool>
+					</object>
+					<int key="connectionID">313</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletCollectionConnection" key="connection">
+						<string key="label">buttonColors</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1050875032"/>
+						<string key="cachedDesigntimeCollectionClassName">NSArray</string>
+						<bool key="addsContentToExistingCollection">NO</bool>
+					</object>
+					<int key="connectionID">314</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletCollectionConnection" key="connection">
+						<string key="label">buttonColors</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="475828652"/>
+						<string key="cachedDesigntimeCollectionClassName">NSArray</string>
+						<bool key="addsContentToExistingCollection">NO</bool>
+					</object>
+					<int key="connectionID">315</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">setColor:</string>
 						<reference key="source" ref="543749993"/>
@@ -400,7 +452,7 @@
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">302</int>
+					<int key="connectionID">310</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -409,7 +461,7 @@
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">303</int>
+					<int key="connectionID">311</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -418,7 +470,7 @@
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">304</int>
+					<int key="connectionID">312</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1588,9 +1640,70 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">308</int>
+			<int key="maxID">315</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">GridView</string>
+					<string key="superclassName">UIView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/GridView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSLayoutConstraint</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/NSLayoutConstraint.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">ViewController</string>
+					<string key="superclassName">UIViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">setColor:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">setColor:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">setColor:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">results</string>
+						<string key="NS.object.0">GridView</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">results</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">results</string>
+							<string key="candidateClassName">GridView</string>
+						</object>
+					</object>
+					<dictionary class="NSMutableDictionary" key="toManyOutletInfosByName">
+						<object class="IBToManyOutletInfo" key="buttonColors">
+							<string key="name">buttonColors</string>
+							<string key="candidateClassName">UIButton</string>
+							<string key="collectionClassName">NSArray</string>
+						</object>
+						<object class="IBToManyOutletInfo" key="testColors">
+							<string key="name">testColors</string>
+							<string key="candidateClassName">UILabel</string>
+							<string key="collectionClassName">NSArray</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/ViewController.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>

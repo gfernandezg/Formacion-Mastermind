@@ -81,4 +81,12 @@
     
 }
 
+- (void)setValues:(NSArray *)values
+{
+    if (_values != values) {
+        _values = values;
+        [self setNeedsDisplay];
+    }
+}
+
 @end

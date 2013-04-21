@@ -18,6 +18,9 @@
 - (void)resetColors;
 - (void)colorTaped:(id)sender;
 
+- (void)checkCombination;
+- (NSArray *)getCombination;
+
 @end
 
 @implementation ViewController
@@ -82,6 +85,13 @@
     
     // Set next emplty color to current color
     [self setNextColor:currentColor];
+    
+    // Check if combination is complete and send it
+    if (self.firstEmptyColor<0)
+    {
+        [self checkCombination];
+        [self resetColors];
+    }
 }
 
 - (void)colorTaped:(UITapGestureRecognizer *)tapGesture
@@ -89,6 +99,48 @@
     UILabel *tapedLabel = (UILabel *)tapGesture.view;
 
     [tapedLabel setBackgroundColor:unknownColor];
+}
+
+
+- (void)checkCombination
+{
+    // Add combination to grid
+    NSMutableArray *currentGridArray = [_results.values mutableCopy];
+    
+    // If values are not created create it
+    if (!currentGridArray) {
+        currentGridArray = [NSMutableArray array];
+    }
+    
+    // Get the array corresponding to the combination
+    NSArray *newCombination = [self getCombination];
+    
+    // Add combinaion to values
+    [currentGridArray addObject:newCombination];
+    _results.values = [NSArray arrayWithArray:currentGridArray];
+    
+}
+
+- (NSArray *)getCombination
+{
+    NSMutableArray *combination = [NSMutableArray arrayWithCapacity:4];
+    BOOL valueSet;
+    
+    // Traverse all colors and compare with button colors to set values
+    for (int n=0; n<4; n++) {
+        valueSet = NO;
+        for (int m=0; m<4; m++) {
+            if ([[[_testColors objectAtIndex:n] backgroundColor] isEqual:[[_buttonColors objectAtIndex:m] backgroundColor]]) {
+                [combination insertObject:[NSNumber numberWithInt:m+1] atIndex:n];
+                valueSet = YES;
+                break;
+            }
+        }
+        if (!valueSet)
+            [combination replaceObjectAtIndex:n withObject:[NSNumber numberWithInt:0]];
+    }
+    
+    return [NSArray arrayWithArray:combination];
 }
 
 @end
