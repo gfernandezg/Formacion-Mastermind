@@ -10,9 +10,10 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UIAlertViewDelegate>
 {
     NSArray *_currentCombination;
+    int _attempts;
 }
 
 @property (readonly, nonatomic) NSInteger firstEmptyColor;
@@ -25,17 +26,37 @@
 - (void)checkCombination;
 - (NSArray *)getCombination;
 
+- (void)resetHand;
+
 @end
 
 @implementation ViewController
+
+- (void)resetHand
+{
+    // Initialize empty colors
+    [self resetColors];
+    
+    // Create new combination
+    _currentCombination = [NSArray arrayWithObjects:self.randomColor, self.randomColor, self.randomColor, self.randomColor, nil];
+    
+    // Reset attempt count
+    _attempts = 0;
+    
+    // Reset results grid
+    _results.values = [NSArray array];
+    
+    // Reset text results
+    for (int n=0; n<4; n++)
+        [[_testColors objectAtIndex:n] setText:@"?"];
+
+    
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    // Initialize empty colors
-    [self resetColors];
     
     // Initialize gestures to remove colors
     for (int n=0; n<4; n++)
@@ -44,9 +65,7 @@
         [[_testColors objectAtIndex:n] addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(colorTaped:)]];
     }
     
-    _currentCombination = [NSArray arrayWithObjects:self.randomColor, self.randomColor, self.randomColor, self.randomColor, nil];
-    
-    NSLog(@"Current Combination %@", _currentCombination);
+    [self resetHand];
 }
 
 - (NSInteger)firstEmptyColor
@@ -102,7 +121,9 @@
     if (self.firstEmptyColor<0)
     {
         [self checkCombination];
-        [self resetColors];
+        
+        if (_attempts < 10)
+            [self resetColors];
     }
 }
 
@@ -134,12 +155,34 @@
     // Check results
     NSArray *combinationResults = [self checkResults:newCombination];
     
+    // Place result status
     for (int n=0; n<4; n++) {
         if (n<[combinationResults count])
             [[_testColors objectAtIndex:n] setText:[combinationResults objectAtIndex:n]];
         else
             [[_testColors objectAtIndex:n] setText:@""];
     }
+    
+    _attempts++;
+    
+    // Check if won or failed
+    if ([[combinationResults componentsJoinedByString:@""] isEqualToString:@"XXXX"]) {
+        UIAlertView *winAlert = [[UIAlertView alloc] initWithTitle:@"Hand Finished" message:@"You win!!!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [winAlert show];
+    } else if (_attempts == 10)
+    {
+        UIAlertView *loseAlert = [[UIAlertView alloc] initWithTitle:@"Hand Finished" message:@"You lose!!!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        for (int n=0; n<4; n++)
+        {
+            UIButton *buttonColor = [_buttonColors objectAtIndex:[[_currentCombination objectAtIndex:n] integerValue]-1];
+            UIColor *combinationColor = buttonColor.backgroundColor;
+            [[_testColors objectAtIndex:n] setBackgroundColor:combinationColor];
+        }
+
+        [loseAlert show];
+    }
+    
 }
 
 - (NSArray *)getCombination
@@ -194,4 +237,8 @@
     return [NSArray arrayWithArray:results];
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self resetHand];
+}
 @end
